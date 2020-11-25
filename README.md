@@ -31,13 +31,13 @@ __2. Results:__
 
 Upon finding the optimised weights learnt through the training phase, a **_personalised PageRank_** of the whole synthetic graph was performed to test whether the bias nodes are found within the top portion of the ranking of all nodes. To visualise the results, a graph was plotted showing the number of bias nodes found within increasing subsets of the top ranked nodes. This graph is shown below: 
 
-   ![Bias results](https://github.com/thomasmolnar/cb-pagerank/results/bias-synthethic-results.png)
+   ![Bias results](https://github.com/thomasmolnar/cb-pagerank/results/bias-synthethic-results.png "Bias Resuts")
 
 The expected performance of the algorithm is illustrated by the saturation of all the bias nodes within the top ~500 nodes in the ranking. This shows the strength of the algorithm as a classifier according to the bias node attributes. 
 
 As a control, the same ranking procedure was performed with randomly generated weights, which yielded the following graph:
 
-   ![Random results](https://github.com/thomasmolnar/cb-pagerank/results/rand-synthethic-results.png)
+   ![Random results](https://github.com/thomasmolnar/cb-pagerank/results/rand-synthethic-results.png "Randomly Generated Weights")
 
 The trend is clearly linear, showing the dispersion of the bias nodes throughout the ranking, with no clear clustering at the top.  
 
