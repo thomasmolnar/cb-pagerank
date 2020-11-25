@@ -19,7 +19,7 @@ In order to use the package, the training data input has to be in the form of a 
 Once the data has been preprocessed, the gradient descent method - grad_iterator - of the [gradient descent object](https://github.com/vada-oxford/gen-sim/blob/master/mw-pagerank/algorithms/grad_descent.py) can be called which will return the optimised weights. Uses of the package can be seen in the various cases below.  
 
 
-## __[Synthetic Test Case](https://github.com/vada-oxford/gen-sim/blob/master/mw-pagerank/mw_pagerank_synthetic_test.ipynb):__
+## __[Synthetic Test Case](./mw_pagerank_synthetic_test.ipynb):__
 
 __1. Data:__ 
 
@@ -31,17 +31,17 @@ __2. Results:__
 
 Upon finding the optimised weights learnt through the training phase, a **_personalised PageRank_** of the whole synthetic graph was performed to test whether the bias nodes are found within the top portion of the ranking of all nodes. To visualise the results, a graph was plotted showing the number of bias nodes found within increasing subsets of the top ranked nodes. This graph is shown below: 
 
-   ![Bias results](https://github.com/thomasmolnar/cb-pagerank/results/bias-synthethic-results.png "Bias Resuts")
+   ![Bias results](./results/bias-synthethic-results.png "Bias Resuts")
 
 The expected performance of the algorithm is illustrated by the saturation of all the bias nodes within the top ~500 nodes in the ranking. This shows the strength of the algorithm as a classifier according to the bias node attributes. 
 
 As a control, the same ranking procedure was performed with randomly generated weights, which yielded the following graph:
 
-   ![Random results](https://github.com/thomasmolnar/cb-pagerank/results/rand-synthethic-results.png "Randomly Generated Weights")
+   ![Random results](./results/rand-synthethic-results.png "Randomly Generated Weights")
 
 The trend is clearly linear, showing the dispersion of the bias nodes throughout the ranking, with no clear clustering at the top.  
 
-## __[Crunchbase Use Case](https://github.com/vada-oxford/gen-sim/blob/master/mw-pagerank/mw_pagerank_test.ipynb):__ 
+## __[Crunchbase Use Case](./mw_pagerank_test.ipynb):__ 
 
 __1. Data:__
 
@@ -53,7 +53,7 @@ __2. Results:__
 
 Due to the nature of the algorithm being constituted of various nested loops, the runtime for large datasets becomes increasingly lengthy. Hence, to test the performance adequately, I only considered a set of 10000 companies (with the 600 Spectrum/bias companies included). From this set, as previously, a training set of 250 bias nodes and 250 random nodes was constructed and allowed for the optimised weights to be found. The following graph was found:
 
-   ![Use case results](https://github.com/thomasmolnar/cb-pagerank/results/usecase-results.png)
+   ![Use case results](./results/usecase-results.png)
 
 Once again this graph illustrates the expected performance of the algorithm, placing the Spectrum list companies at the top of the ranking list. This is remarkable considering the small amount of features considered. The steep rise of the curve can be attributed to the fact that most of the Spectrum list nodes were sizeable well-established companies. This meant that the attributes associated to them, quantifying the scale of the company, were all large. In constrast, most of the randomly selected nodes are small companies, which have usually not surpassed many funding rounds. Hence the algorithm was easily able to find the optimised weights biased towards larger feature values. 
 
